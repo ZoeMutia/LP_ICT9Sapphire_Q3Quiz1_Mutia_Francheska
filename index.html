@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Computations</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: lightblue;
+            color: white;
+            font-family: 'Edwardian Script ITC', cursive, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+
+        button {
+            background-color: lightpink;
+            color: hotpink;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 0;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #f28fb3;
+        }
+
+        .output {
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>If a = 20 and b = 5, compute for the following:</h1>
+
+        <h2>Arithmetic Operator</h2>
+        <div class="output" id="arithmeticOutput" class="hidden"></div>
+        <button onclick="showArithmetic()">Show Answer</button>
+
+        <h2>Comparison Operator</h2>
+        <div class="output" id="comparisonOutput" class="hidden"></div>
+        <button onclick="showComparison()">Show Answer</button>
+
+        <h2>Logical Operator</h2>
+        <div class="output" id="logicalOutput" class="hidden"></div>
+        <button onclick="showLogical()">Show Answer</button>
+    </div>
+
+    <script>
+        const a = 20;
+        const b = 5;
+
+        function showArithmetic() {
+            const exponent = a ** b;
+            const mod = a % b;
+            document.getElementById('arithmeticOutput').innerHTML = `a. Exponent: ${exponent}<br>b. Mod: ${mod}`;
+            document.getElementById('arithmeticOutput').classList.remove('hidden');
+        }
+
+        function showComparison() {
+            const isGreater = a > b;
+            const isEqual = a === b;
+            document.getElementById('comparisonOutput').innerHTML = `a. is a greater than b?: ${isGreater}<br>b. is a equal to b?: ${isEqual}`;
+            document.getElementById('comparisonOutput').classList.remove('hidden');
+        }
+
+        function showLogical() {
+            const logicalA = (a <= b) && (a >= b);
+            const logicalB = (a !== b) || (a === b);
+            document.getElementById('logicalOutput').innerHTML = `a. (a <= b) && (a >= b): ${logicalA}<br>b. (a != b) || (a == b): ${logicalB}`;
+            document.getElementById('logicalOutput').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
+
+
